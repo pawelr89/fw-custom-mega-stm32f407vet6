@@ -9,14 +9,14 @@
 /* Some fields in following struct are used for DMA transfers, so do not cache */
 NO_CACHE SNORDriver snor1;
 
-static const SPIConfig SPIcfg1 = {
+static const SPIConfig W25SpiCfg = {
 	.end_cb			= NULL,
 	.error_cb		= NULL,
 	.dcr			= STM32_DCR_FSIZE(23U) |	/* 8MB device.          */
 					  STM32_DCR_CSHT(1U)		/* NCS 2 cycles delay.  */
 };
 
-static const SNORConfig snorcfg1 = {
+static const SNORConfig W25FlashConfig = {
 	.busp			= &SPID1,
 	.buscfg			= &SPIcfg1
 };
